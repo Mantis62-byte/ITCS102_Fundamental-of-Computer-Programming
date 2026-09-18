@@ -1,36 +1,38 @@
-# Input
-# Age (Integer)
-# is_employed (boolen)
-# credit_score (integer)
-# annual_income (float)
-# has_collateral (boolen)
- 
+#nesting 
+print("Welcome to the Bank!")
+age = int(input("Enter you age ---->"))
+IsEmployed = bool(input("Are you currently Employed?--->"))
+credit_score = eval(input("Credit score history--->"))
+AnnualIncome = eval(input("How much is your annual income---->?"))
+HasCollateral = bool(input("Do you have any collateral--->?"))
 
-age = int(input(" input age "))
-is_employed = bool(input("Are you currently employed (True/False)  "))
-credit_score = int(input("Credit score"))
-annual_income = float(input("what is your annual income "))
-has_collateral = bool(input("Do you have any collateral"))
+base_interest = 0.0
+#1.
+if age >= 21 and IsEmployed == True:
+    print("you may now proceed to the next step")
 
-if age >= 21 and is_employed == True:
-    print("Passed baseline eligibility")
+
+    if credit_score >= 750:
+        if AnnualIncome >= 1000:
+           base_rate = 4.5
+           print("hi,your interest rate is",base_interest)
+        else:
+          base_rate = 5.0
+          print("hi,your interest rate is",base_interest) 
+    elif credit_score >= 600 and credit_score >750:
+        if HasCollateral == True:
+            base_rate = 7,0
+            print("hi,your interest rate is",base_interest)
+        elif AnnualIncome > 40000:
+             base_rate = 9.5
+             print("hi,your interest rate is",base_interest)
+        else:
+             base_rate=8.0
+             print("hi,your interest rate is",base_interest)
+    if credit_score < 600:
+        print("rejected credit score too low!")
+
 
 else:
-    print("Rejected, failed baseline eligibility")
-
-    #Tier 1 : High Credit (credit_score >= 750)
-    # Base interest rate: 5.0%
-    # If annual_income >= 100,000 give a loyalty discount
-    if credit_score >= 750:
-        if annual_income >= 100000:
-           base_rate = 4.5
-           print("Hi your interest rate is ", base_rate)
-    else :
-       print("Rejected, failed baseline eligibility")
-
-       if annual_income >= 100000:
-           print("You have a high Annual income")
-           base_rate = 4.5
-           print("Hi Your interest rate is ", base_rate)
-
+    print("Baseline crietria Failed!")
      
