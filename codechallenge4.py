@@ -12,8 +12,8 @@ import getpass
 #Login
 print("------------Login Account----------------")
 
-correct_username =""
-correct_password =""
+correct_username ="john paul"
+correct_password ="1234"
 #Asking for user login details
 username= input("Please enter your username --->:")
 password= input("Please enter your password --->:")
